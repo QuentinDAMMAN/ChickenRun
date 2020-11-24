@@ -1,5 +1,8 @@
 package tools;
 
+import data.*;
+import exec.*;
+
 public class Case {
 
 	private static boolean isContinuing;
@@ -28,9 +31,11 @@ public class Case {
 				switch (input) {
 				case 1:
 //				ajouter un poulet
+
 					break;
 				case 2:
 //				ajouter un canard
+
 					break;
 				default:
 					break;
@@ -43,9 +48,11 @@ public class Case {
 				switch (input) {
 				case 1:
 //				ajouter un paon
+
 					break;
 				case 2:
 //				ajouter un cygne
+
 					break;
 				default:
 					break;
