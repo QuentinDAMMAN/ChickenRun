@@ -1,9 +1,10 @@
 package data;
 
-public class Paon extends Volaille{
+public class Paon extends VolailleAccueillie{
 
-	public Paon(int pId) {
-		super(pId);
-
+	public Paon() {
+		super();
 	}
+
+	
 }
