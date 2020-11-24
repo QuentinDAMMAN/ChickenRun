@@ -1,48 +1,22 @@
 package exec;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import data.Canard;
-import data.Poulet;
-import data.Volaille;
+import tools.Case;
+import tools.Input;
+import tools.Interface;
 
 public class App {
-	static Map<Integer, Volaille> volailles = new HashMap<>();
-
 	public static void main(String[] args) {
 
-	}
-//	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YY");
-//	System.out.println(sdf.format(vPaon.getDateAdmi()));
+		System.out.println("BIENVENUE !");
+		System.out.println("****\n");
 
-	private static void afficherPrixTotal() {
-		System.out.println("afffichage salaire du prix total de volailles vendables");
+		Input.initManualInput(true);
 
-		if (volailles.isEmpty()) {
-			System.out.println("il n'y a aucune volaille à vendre");
-		} else {
-			double total = 0;
-			for (Entry<Integer, Volaille> volaille : volailles.entrySet()) {
-				if (volaille instanceof Poulet) {
-					total += Poulet.getPrixAuKilo();
-				} else if (volaille instanceof Canard) {
-					total += Canard.getPrixAuKilo();
-				}
-			}
-			System.out.println("total du prix de vente des volailles : " + total);
+		int input;
+		while (Case.isContinuing()) {
+			Interface.showMenuPrincipale();
+			input = Input.inputInt();
+			Case.processAction(input);
 		}
-	}
-
-	private static void afficherVolailles() {
-		System.out.println("il y a " + volailles.size() + " volailles :");
-		for (Volaille volaille : volailles.values()) {
-			System.out.println(" - " + volaille.getId() + " " + volaille.getClass().getName());
-		}
-	}
-
-	private static void afficherVolaillesParType() {
-		// TODO : TT
 	}
 }
