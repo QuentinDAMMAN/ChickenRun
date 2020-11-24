@@ -1,9 +1,9 @@
 package data;
 
-public abstract class VollailleAVendre extends Volaille {
+public abstract class VolailleAVendre extends Volaille {
 	protected int poids;
 
-	public VollailleAVendre(int pPoids) {
+	public VolailleAVendre(int pPoids) {
 		super();
 		this.poids = pPoids;
 	}
@@ -16,6 +16,7 @@ public abstract class VollailleAVendre extends Volaille {
 		this.poids = poids;
 	}
 	
-	
+
+
 
 }

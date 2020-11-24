@@ -1,31 +1,29 @@
 package data;
 
-public class Poulet extends VollailleAVendre {
-	protected static int prixAuKilo;
-	protected static int poidsAbattage;
+public class Poulet extends VolailleAVendre {
+	private static int prixAuKilo = 10;
+	protected static int poidsAbattage = 1;
 
 	public Poulet(int pPoids) {
 		super(pPoids);
 	}
 
-
-	public static void ModifierPrixKilo(int pPrixKilo) {
-		prixAuKilo = pPrixKilo;
-	}
 	
-	public static void ModifierPoidsAbattage(int pPoidsAbattage) {
-		poidsAbattage = pPoidsAbattage;
+	public static int getPoidsAbattage() {
+		return poidsAbattage;
 	}
+
+	public static void setPoidsAbattage(int poidsAbattage) {
+		Poulet.poidsAbattage = poidsAbattage;
+	}
+
 	
-	public void ModifierPoidsVolaille(int pPoids) {
-		this.poids = pPoids;
-	}
-
-
 	public static int getPrixAuKilo() {
 		return prixAuKilo;
 	}
 
-
+	public static void setPrixAuKilo(int prixAuKilo) {
+		Poulet.prixAuKilo = prixAuKilo;
+	}
 
 }

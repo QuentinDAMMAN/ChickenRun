@@ -4,11 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import data.Canard;
-import data.Cygne;
-import data.Paon;
-import data.Poulet;
-import data.Volaille;
+import data.*;
 
 public class Logique {
 	public final static int MAX_VOLLAILLES = 8;
@@ -22,18 +18,20 @@ public class Logique {
 	protected static int counterCygnes;
 	static private Map<Integer, Volaille> volailles = new HashMap<>();
 
-	public void ajouterPaon() {
+	public static void ajouterPaon() {
 		if (volailles.size() < MAX_VOLLAILLES && counterPaons < MAX_PAONS) {
 			Paon vPaon = new Paon();
 			volailles.put(vPaon.getId(), vPaon);
 			counterPaons++;
 			System.out.println("Vous avez ajouté un paon.");
+		} else if (volailles.size() >= MAX_VOLLAILLES) {
+			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
-			System.out.println("Vous ne pouvez pas rajouter le paon.");
+			System.out.println("Vous ne pouvez pas rajouter de paon.");
 		}
 	}
 
-	public void rendrePaon(int pId) {
+	public static void rendrePaon(int pId) {
 		if (!volailles.containsKey(pId)) {
 			System.out.println("Il n'y a pas de volaille avec cet identifiant.");
 		} else if (!(volailles.get(pId) instanceof Paon)) {
@@ -45,18 +43,20 @@ public class Logique {
 		}
 	}
 
-	public void ajouterCygne() {
+	public static void ajouterCygne() {
 		if (volailles.size() < MAX_VOLLAILLES && counterCygnes < MAX_CYGNES) {
 			Cygne vCygne = new Cygne();
 			volailles.put(vCygne.getId(), vCygne);
 			counterCygnes++;
 			System.out.println("Vous avez ajouté un cygne.");
+		} else if (volailles.size() >= MAX_VOLLAILLES) {
+			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
-			System.out.println("Vous ne pouvez pas rajouter le cygne.");
+			System.out.println("Vous ne pouvez pas rajouter de cygne.");
 		}
 	}
 
-	public void rendreCygne(int pId) {
+	public static void rendreCygne(int pId) {
 		if (!volailles.containsKey(pId)) {
 			System.out.println("Il n'y a pas de volaille avec cet identifiant.");
 		} else if (!(volailles.get(pId) instanceof Cygne)) {
@@ -68,18 +68,20 @@ public class Logique {
 		}
 	}
 
-	public void ajouterPoulet(int pPoids) {
+	public static void ajouterPoulet(int pPoids) {
 		if (volailles.size() < MAX_VOLLAILLES && counterPoulets < MAX_POULETS) {
 			Poulet vPoulet = new Poulet(pPoids);
 			volailles.put(vPoulet.getId(), vPoulet);
 			counterPoulets++;
 			System.out.println("Vous avez ajouté un poulet.");
+		} else if (volailles.size() >= MAX_VOLLAILLES) {
+			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
-			System.out.println("Vous ne pouvez pas rajouter le poulet.");
+			System.out.println("Vous ne pouvez pas rajouter de Poulet.");
 		}
 	}
 
-	public void vendrePoulet(int pId) {
+	public static void vendrePoulet(int pId) {
 		if (!volailles.containsKey(pId)) {
 			System.out.println("Il n'y a pas de volaille avec cet identifiant.");
 		} else if (!(volailles.get(pId) instanceof Poulet)) {
@@ -91,18 +93,20 @@ public class Logique {
 		}
 	}
 
-	public void ajouterCanard(int pPoids) {
+	public static void ajouterCanard(int pPoids) {
 		if (volailles.size() < MAX_VOLLAILLES && counterCanards < MAX_CANARDS) {
 			Canard vCanard = new Canard(pPoids);
 			volailles.put(vCanard.getId(), vCanard);
 			counterCanards++;
 			System.out.println("Vous avez ajouté un canard.");
+		} else if (volailles.size() >= MAX_VOLLAILLES) {
+			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
-			System.out.println("Vous ne pouvez pas rajouter le canard.");
+			System.out.println("Vous ne pouvez pas rajouter de Canard.");
 		}
 	}
 
-	public void vendreCanard(int pId) {
+	public static void vendreCanard(int pId) {
 		if (!volailles.containsKey(pId)) {
 			System.out.println("Il n'y a pas de volaille avec cet identifiant.");
 		} else if (!(volailles.get(pId) instanceof Canard)) {
@@ -114,7 +118,46 @@ public class Logique {
 		}
 	}
 
-	private static void afficherPrixTotal() {
+	public static void ModifierPouletPrixKilo(int pPrixKilo) {
+		Poulet.setPrixAuKilo(pPrixKilo);
+		System.out.println("Le prix du poulet au kilo est de " + pPrixKilo + "€.");
+	}
+
+	public static void ModifierCanardPrixKilo(int pPrixKilo) {
+		Canard.setPrixAuKilo(pPrixKilo);
+		System.out.println("Le prix du canard au kilo est de " + pPrixKilo + "€.");
+
+	}
+
+	public static void ModifierPouletPoidsAbattage(int pPoidsAbattage) {
+		Poulet.setPoidsAbattage(pPoidsAbattage);
+		System.out.println("Le poid d'abattage du poulet est de " + pPoidsAbattage + "kg.");
+
+	}
+
+	public static void ModifierCanardPoidsAbattage(int pPoidsAbattage) {
+		Canard.setPoidsAbattage(pPoidsAbattage);
+		System.out.println("Le poid d'abattage du poulet est de " + pPoidsAbattage + "kg.");
+
+	}
+
+	public static void ModifierPoidsVolaille(int pId, int pPoids) {
+		if (!volailles.containsKey(pId)) {
+			System.out.println("Cette volaille n'existe pas.");
+		} else if (volailles.get(pId) instanceof Poulet) {
+			Poulet vPoulet = ((Poulet) volailles.get(pId));
+			vPoulet.setPoids(pPoids);
+			System.out.println("Le poids du poulet est de " + pPoids + "kg.");
+		} else if (volailles.get(pId) instanceof Canard) {
+			Canard vCanard = ((Canard) volailles.get(pId));
+			vCanard.setPoids(pPoids);
+			System.out.println("Le poids du canard est de " + pPoids + "kg.");
+		} else {
+			System.out.println("Cette volaille n'est ni un poulet, ni un canard.");
+		}
+	}
+
+	public static void afficherPrixTotal() {
 		System.out.println("afffichage salaire du prix total de volailles vendables");
 
 		if (volailles.isEmpty()) {
@@ -122,21 +165,35 @@ public class Logique {
 		} else {
 			double total = 0;
 			for (Entry<Integer, Volaille> volaille : volailles.entrySet()) {
-				if (volaille instanceof Poulet) {
-					total += Poulet.getPrixAuKilo();
-				} else if (volaille instanceof Canard) {
-					total += Canard.getPrixAuKilo();
+				if (volaille.getValue() instanceof Poulet) {
+					Poulet vPoulet = ((Poulet) volaille.getValue());
+					if (vPoulet.getPoids() >= Poulet.getPoidsAbattage()) {
+						total += Poulet.getPrixAuKilo() * vPoulet.getPoids();
+					}
+				} else if (volaille.getValue() instanceof Canard) {
+					Canard vCanard = ((Canard) volaille.getValue());
+					if (vCanard.getPoids() >= Canard.getPoidsAbattage()) {
+						total += Canard.getPrixAuKilo() * vCanard.getPoids();
+					}
 				}
 			}
 			System.out.println("total du prix de vente des volailles : " + total);
 		}
 	}
 
-	private static void afficherVolailles() {
+	public static void afficherVolailles() {
 		System.out.println("il y a " + volailles.size() + " volailles :");
 		for (Volaille volaille : volailles.values()) {
 			System.out.println(" - " + volaille.getId() + " " + volaille.getClass().getName());
 		}
+	}
+
+	public static void afficherNbVolaillesParType() {
+		System.out.println("il y a " + volailles.size() + " volailles  au total:");
+		System.out.println("\t- " + counterPoulets + " poulet" + (counterPoulets == 1 ? "" : "s"));
+		System.out.println("\t- " + counterCanards + " canard" + (counterCanards == 1 ? "" : "s"));
+		System.out.println("\t- " + counterPaons + " paon" + (counterPaons == 1 ? "" : "s"));
+		System.out.println("\t- " + counterCygnes + " cygne" + (counterCygnes == 1 ? "" : "s"));
 	}
 
 	private static void afficherVolaillesParType() {
