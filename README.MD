@@ -66,7 +66,18 @@ Essayer d'utiliser, si possible !! :
 
 
 ### Partage des tâches
-- Valentin
-- Quentin
-- Antoine
-- Pierre
+- Valentin :
+  - voir le nombre de volailles par type.
+  - voir le total de prix des volailles abattables.
+  - voir toutes les volailles.
+- Quentin : 
+  - Main, 
+  - Logique, 
+  - affichage, 
+  - Entrées
+- Antoine : 
+  - ajouter une volaille abattable.
+  - ajouter un paon.
+- Pierre : 
+  - méthodes statiques (poids abattage, prix du jour), 
+  - modifier le poids d'une volaille
