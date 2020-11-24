@@ -5,8 +5,8 @@ public class Canard extends VollailleAVendre {
 	protected static int poidsAbattage;
 
 	
-	public Canard(int pNumIdentification, int pPoids) {
-		super(pNumIdentification, pPoids);
+	public Canard(int pId, int pPoids) {
+		super(pId, pPoids);
 	}
 	
 	

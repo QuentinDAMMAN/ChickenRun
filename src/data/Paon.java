@@ -6,5 +6,4 @@ public class Paon extends Volaille{
 		super(pId);
 
 	}
-
 }
