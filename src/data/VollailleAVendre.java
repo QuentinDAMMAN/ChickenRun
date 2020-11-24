@@ -8,4 +8,14 @@ public abstract class VollailleAVendre extends Volaille {
 		this.poids = pPoids;
 	}
 
+	public int getPoids() {
+		return poids;
+	}
+
+	public void setPoids(int poids) {
+		this.poids = poids;
+	}
+	
+	
+
 }

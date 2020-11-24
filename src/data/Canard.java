@@ -9,6 +9,16 @@ public class Canard extends VollailleAVendre {
 		super(pPoids);
 	}
 
+	public static void ModifierPrixKilo(int pPrixKilo) {
+		prixAuKilo = pPrixKilo;
+	}
 	
+	public static void ModifierPoidsAbattage(int pPoidsAbattage) {
+		poidsAbattage = pPoidsAbattage;
+	}
+	
+	public void ModifierPoidsVolaille(int pPoids) {
+		this.poids = pPoids;
+	}
 
 }

@@ -9,7 +9,17 @@ public class Poulet extends VollailleAVendre {
 	}
 
 
+	public static void ModifierPrixKilo(int pPrixKilo) {
+		prixAuKilo = pPrixKilo;
+	}
 	
+	public static void ModifierPoidsAbattage(int pPoidsAbattage) {
+		poidsAbattage = pPoidsAbattage;
+	}
+	
+	public void ModifierPoidsVolaille(int pPoids) {
+		this.poids = pPoids;
+	}
 
 
 
