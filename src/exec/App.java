@@ -7,7 +7,6 @@ import data.*;
 
 public class App {
 	public static void main(String[] args) {
-			
 
 //		System.out.println("BIENVENUE !");
 //		System.out.println("****\n");
@@ -49,6 +48,8 @@ public class App {
 		Logique.ModifierPoidsVolaille(6, 20);
 		Logique.ModifierPoidsVolaille(7, 15);
 		
+		Logique.afficherVolaillesParType();
+		
 		Logique.afficherPrixTotal();
 
 		Logique.afficherNbVolaillesParType();
@@ -60,8 +61,9 @@ public class App {
 		
 		Logique.afficherNbVolaillesParType();
 		
-		Logique.afficherPrixTotal(); //????????????????????????????????????????
-
+		Logique.afficherPrixTotal(); 
+		
+		Logique.afficherVolaillesParType();
 
 
 		

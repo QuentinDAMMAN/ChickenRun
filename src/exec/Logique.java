@@ -1,8 +1,12 @@
 package exec;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import data.*;
 
@@ -23,7 +27,7 @@ public class Logique {
 			Paon vPaon = new Paon();
 			volailles.put(vPaon.getId(), vPaon);
 			counterPaons++;
-			System.out.println("Vous avez ajoutÃ© un paon.");
+			System.out.println("Vous avez ajouté un paon.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -48,7 +52,7 @@ public class Logique {
 			Cygne vCygne = new Cygne();
 			volailles.put(vCygne.getId(), vCygne);
 			counterCygnes++;
-			System.out.println("Vous avez ajoutÃ© un cygne.");
+			System.out.println("Vous avez ajouté un cygne.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -73,7 +77,7 @@ public class Logique {
 			Poulet vPoulet = new Poulet(pPoids);
 			volailles.put(vPoulet.getId(), vPoulet);
 			counterPoulets++;
-			System.out.println("Vous avez ajoutÃ© un poulet.");
+			System.out.println("Vous avez ajouté un poulet.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -98,7 +102,7 @@ public class Logique {
 			Canard vCanard = new Canard(pPoids);
 			volailles.put(vCanard.getId(), vCanard);
 			counterCanards++;
-			System.out.println("Vous avez ajoutÃ© un canard.");
+			System.out.println("Vous avez ajouté un canard.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -120,12 +124,12 @@ public class Logique {
 
 	public static void ModifierPouletPrixKilo(int pPrixKilo) {
 		Poulet.setPrixAuKilo(pPrixKilo);
-		System.out.println("Le prix du poulet au kilo est de " + pPrixKilo + "â‚¬.");
+		System.out.println("Le prix du poulet au kilo est de " + pPrixKilo + "kg.");
 	}
 
 	public static void ModifierCanardPrixKilo(int pPrixKilo) {
 		Canard.setPrixAuKilo(pPrixKilo);
-		System.out.println("Le prix du canard au kilo est de " + pPrixKilo + "â‚¬.");
+		System.out.println("Le prix du canard au kilo est de " + pPrixKilo + "kg.");
 
 	}
 
@@ -161,7 +165,7 @@ public class Logique {
 		System.out.println("afffichage salaire du prix total de volailles vendables");
 
 		if (volailles.isEmpty()) {
-			System.out.println("il n'y a aucune volaille Ã  vendre");
+			System.out.println("il n'y a aucune volaille à  vendre");
 		} else {
 			double total = 0;
 			for (Entry<Integer, Volaille> volaille : volailles.entrySet()) {
@@ -177,7 +181,7 @@ public class Logique {
 					}
 				}
 			}
-			System.out.println("total du prix de vente des volailles : " + total);
+			System.out.println("total du prix de vente des volailles : " + total + "€.");
 		}
 	}
 
@@ -196,8 +200,36 @@ public class Logique {
 		System.out.println("\t- " + counterCygnes + " cygne" + (counterCygnes == 1 ? "" : "s"));
 	}
 
-	private static void afficherVolaillesParType() {
-		// TODO : TT
+	public static void afficherVolaillesParType() {
+		if (volailles.isEmpty()) {
+			System.out.println("il n'y a aucune volaille à afficher");
+			return;
+		}
+		ArrayList<VolailleAccueillie> volAccueillables = new ArrayList<>();
+		ArrayList<VolailleAVendre> volVendables = new ArrayList<>();
+		// Remplissage des Treemap
+		for (Entry<Integer, Volaille> volaille : volailles.entrySet()) {
+			Volaille value = volaille.getValue();
+			if (value instanceof VolailleAccueillie) {
+				volAccueillables.add((VolailleAccueillie) value);
+			} else if (value instanceof VolailleAVendre) {
+				volVendables.add((VolailleAVendre) value);
+			}
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY hh-mm-ss");
+		System.out.println("Volailles par type :");
+		System.out.println("- Accueillables");
+		Collections.sort(volAccueillables);
+		for (VolailleAccueillie volaille : volAccueillables) {
+			VolailleAccueillie value = volaille;
+			System.out.println("\t- " + value.getClass().getSimpleName() + " " + sdf.format(value.getDateAdmition()) + ".");
+		}
+		System.out.println("- Vendables");
+		Collections.sort(volVendables);
+		for (VolailleAVendre volaille : volVendables) {
+			VolailleAVendre value = volaille;
+			System.out.println("\t- " + value.getClass().getSimpleName() + " " + value.getPoids() + "kg.");
+		}
 	}
 
 }

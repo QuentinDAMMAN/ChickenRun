@@ -144,13 +144,13 @@ public class Case {
 //				vendre un poulet
 				System.out.println("Veillez saisir un id :");
 				input = Input.inputInt();
-				Logique.rendrePoulet(input);
+				Logique.vendrePoulet(input);
 				break;
 			case 2:
 //				vendre un canard
 				System.out.println("Veillez saisir un id :");
 				input = Input.inputInt();
-				Logique.rendreCanard(input);
+				Logique.vendreCanard(input);
 				break;
 			default:
 				erreurChiffre();
