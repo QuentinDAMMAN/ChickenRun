@@ -3,23 +3,24 @@ package exec;
 import tools.Case;
 import tools.Input;
 import tools.Interface;
-import data.*;
 
 public class App {
 	public static void main(String[] args) {
 
-//		System.out.println("BIENVENUE !");
-//		System.out.println("****\n");
-//
 //		Input.initManualInput(true);
-//
 //		int input;
 //		while (Case.isContinuing()) {
 //			Interface.showMenuPrincipale();
 //			input = Input.inputInt();
 //			Case.processAction(input);
+//			System.out.println();
 //		}
-		
+//		
+//		System.out.println("BIENVENUE !");
+//		System.out.println("****\n");
+
+	
+
 		Logique.ajouterPaon();
 		Logique.ajouterPaon();
 		Logique.ajouterPaon();
@@ -48,8 +49,6 @@ public class App {
 		Logique.ModifierPoidsVolaille(6, 20);
 		Logique.ModifierPoidsVolaille(7, 15);
 		
-		Logique.afficherVolaillesParType();
-		
 		Logique.afficherPrixTotal();
 
 		Logique.afficherNbVolaillesParType();
@@ -62,8 +61,7 @@ public class App {
 		Logique.afficherNbVolaillesParType();
 		
 		Logique.afficherPrixTotal(); 
-		
-		Logique.afficherVolaillesParType();
+
 
 
 		

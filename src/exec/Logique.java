@@ -8,7 +8,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import data.*;
+import data.Canard;
+import data.Cygne;
+import data.Paon;
+import data.Poulet;
+import data.Volaille;
+import data.VolailleAVendre;
+import data.VolailleAccueillie;
 
 public class Logique {
 	public final static int MAX_VOLLAILLES = 8;
