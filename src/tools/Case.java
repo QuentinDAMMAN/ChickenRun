@@ -74,39 +74,58 @@ public class Case {
 			input = Input.inputInt();
 			switch (input) {
 			case 1:
-//			modifier poids abattage
+//				modifier LE POIDS D'attage
+				Interface.showSousMenuModifierAbttage();
 				input = Input.inputInt();
 				switch (input) {
 				case 1:
-//				poids du poulet
-					input = Input.inputInt();
+//					modifier le poids poulet
 					System.out.println("Veillez saisir un poids :");
+					input = Input.inputInt();
 					Logique.ModifierPouletPoidsAbattage(input);
 					break;
+
 				case 2:
-//				poids du canard
-					input = Input.inputInt();
+//					mofifier poids cnard
+//						modifier prix du jour canard
 					System.out.println("Veillez saisir un poids :");
+					input = Input.inputInt();
 					Logique.ModifierCanardPoidsAbattage(input);
 					break;
 
 				default:
+					erreurChiffre();
 					break;
 				}
+				break;
 
 			case 2:
 //			modifier prix du jour poulet
+				Interface.showSousMenuModifierPrixDuJour();
 				input = Input.inputInt();
-				System.out.println("Veillez saisir un prix au kilo pour les poulets :");
-				Logique.ModifierPouletPrixKilo(input);
-				break;
-			case 3:
-//				modifier prix du jour canard
+				switch (input) {
+				case 1:
+//				modifier le prix poulet
+					System.out.println("Veillez saisir le prix du poulet au kg :");
 					input = Input.inputInt();
-					System.out.println("Veillez saisir un prix au kilo pour les canards :");
+					Logique.ModifierPouletPrixKilo(input);
+					break;
+
+				case 2:
+//				mofifier prix cnard
+//					modifier prix du jour canard
+					System.out.println("Veillez saisir le prix du canard au kg:");
+					input = Input.inputInt();
 					Logique.ModifierCanardPrixKilo(input);
 					break;
-			case 4:
+
+				default:
+					erreurChiffre();
+					break;
+				}
+
+			case 3:
+
 //				modifier poids d'une volaille marchande
 				System.out.println("Veillez saisir un id :");
 				input = Input.inputInt();

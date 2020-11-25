@@ -40,6 +40,11 @@ public final class Interface {
 //		retour();
 		System.out.println("-1 modifier le poids d'un poulet\n-2 modifier le poids d'un canard");
 	}
+	public static void showSousMenuModifierAbttage() {
+		sousMenu();
+//		retour();
+		System.out.println("-1 modifier le poids d'abattage d'un poulet\n-2 modifier le poids d'abattage d'un canard");
+	}
 
 	public static void showSousMenuModifierPrixDuJour() {
 		sousMenu();
@@ -71,6 +76,6 @@ public final class Interface {
 	}
 
 //	private static void retour() {
-//		System.out.println("-0 pour revenir en arrière");
+//		System.out.println("-0 pour revenir en arriï¿½re");
 //	}
 }
