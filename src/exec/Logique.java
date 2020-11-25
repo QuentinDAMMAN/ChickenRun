@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import data.*;
+import data.Canard;
+import data.Cygne;
+import data.Paon;
+import data.Poulet;
+import data.Volaille;
 
 public class Logique {
 	public final static int MAX_VOLLAILLES = 8;

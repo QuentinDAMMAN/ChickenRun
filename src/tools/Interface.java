@@ -35,18 +35,19 @@ public final class Interface {
 		System.out.println(
 				"-1 modifier poids abattage\n-2 modifier prix du jour\n-3 modifier poids d'une volaille marchande");
 	}
+	
+	public static void showSousMenuModifierVolailleMarchande() {
+		sousMenu();
+//		retour();
+		System.out.println(
+				"-1 modifier le poids d'un poulet\n-2 modifier le poids d'un canard");
+	}
 
 	public static void showSousMenuAfficher() {
 		sousMenu();
 //		retour();
 		System.out.println(
 				"-1 voir le nombre de volailles par type\n-2 voir le total du prix des volailles abattables\n-3 voir toutes les volailles");
-	}
-
-	public static void showSousMenuAfficherVolaille() {
-		sousMenu();
-//		retour();
-		System.out.println("-1 voir le nombre de poulet\n-2 voir le nombre de canard\n-3 voir le nombre de paon");
 	}
 
 	public static void showSousMenuVendre() {

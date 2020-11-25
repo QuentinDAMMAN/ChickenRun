@@ -1,7 +1,6 @@
 package tools;
 
-import data.*;
-import exec.*;
+import exec.Logique;
 
 public class Case {
 
@@ -76,17 +75,35 @@ public class Case {
 			switch (input) {
 			case 1:
 //			modifier poids abattage
-				break;
+				input = Input.inputInt();
+				switch (input) {
+				case 1:
+//				poids du poulet
+					input = Input.inputInt();
+					System.out.println("Veillez saisir un poids :");
+					Logique.ModifierPouletPoidsAbattage(input);
+					break;
+				case 2:
+//				poids du canard
+					input = Input.inputInt();
+					System.out.println("Veillez saisir un poids :");
+					Logique.ModifierCanardPoidsAbattage(input);
+					break;
+
+				default:
+					break;
+				}
+
 			case 2:
 //			modifier prix du jour
 				break;
 			case 3:
 //				modifier poids d'une volaille marchande
-					System.out.println("Veillez saisir un id :");
-					input = Input.inputInt();
-					System.out.println("Veillez saisir un poids :");
-					int poids = Input.inputInt();
-					Logique.ModifierPoidsVolaille(input, poids);
+				System.out.println("Veillez saisir un id :");
+				input = Input.inputInt();
+				System.out.println("Veillez saisir un poids :");
+				int poids = Input.inputInt();
+				Logique.ModifierPoidsVolaille(input, poids);
 
 				break;
 			default:
@@ -102,23 +119,7 @@ public class Case {
 			switch (input) {
 			case 1:
 //			voir le nombre de volailles par type
-				Interface.showSousMenuAfficherVolaille();
-				switch (input) {
-				case 0:
-					break;
-				case 1:
-//					voir le nombre de poulet
-					break;
-				case 2:
-//					voir le nombre de canard
-					break;
-				case 3:
-//					voir le nombre de paon
-					break;
-				default:
-					erreurChiffre();
-					break;
-				}
+				Logique.afficherNbVolaillesParType();
 				break;
 			case 2:
 //			voir le total de prix des volailles abattables
@@ -127,7 +128,6 @@ public class Case {
 			case 3:
 //			voir toutes les volailles
 				Logique.afficherVolailles();
-
 				break;
 			default:
 				erreurChiffre();
@@ -144,13 +144,13 @@ public class Case {
 //				vendre un poulet
 				System.out.println("Veillez saisir un id :");
 				input = Input.inputInt();
-				Logique.rendrePoulet(input);
+				Logique.vendrePoulet(input);
 				break;
 			case 2:
 //				vendre un canard
 				System.out.println("Veillez saisir un id :");
 				input = Input.inputInt();
-				Logique.rendreCanard(input);
+				Logique.vendreCanard(input);
 				break;
 			default:
 				erreurChiffre();
