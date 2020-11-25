@@ -36,12 +36,6 @@ public final class Interface {
 				"-1 modifier poids abattage\n-2 modifier prix du jour\n-3 modifier poids d'une volaille marchande");
 	}
 
-	public static void showSousMenuModifierVolailleMarchande() {
-		sousMenu();
-//		retour();
-		System.out.println("-1 modifier poids d'un poulet\n-2 modifier le poids d'un canard");
-	}
-
 	public static void showSousMenuAfficher() {
 		sousMenu();
 //		retour();

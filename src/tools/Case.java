@@ -82,27 +82,12 @@ public class Case {
 				break;
 			case 3:
 //				modifier poids d'une volaille marchande
-				Interface.showSousMenuModifierVolailleMarchande();
-				input = Input.inputInt();
-				switch (input) {
-				case 1:
-//				modifier le poids d'un poulet	
 					System.out.println("Veillez saisir un id :");
 					input = Input.inputInt();
-//					test id ?
-					Poulet.ModifierPoidsVolaille(input);
-					break;
-				case 2:
-//					modifier le poids d'un canard	
-					System.out.println("Veillez saisir un id :");
-					input = Input.inputInt();
-//					test id ?
-					Canard.ModifierPoidsVolaille(input);
-					break;
-				default:
-					erreurChiffre();
-					break;
-				}
+					System.out.println("Veillez saisir un poids :");
+					int poids = Input.inputInt();
+					Logique.ModifierPoidsVolaille(input, poids);
+
 				break;
 			default:
 				erreurChiffre();
@@ -137,10 +122,11 @@ public class Case {
 				break;
 			case 2:
 //			voir le total de prix des volailles abattables
+				Logique.afficherPrixTotal();
 				break;
 			case 3:
 //			voir toutes les volailles
-				System.out.println(Logique.getVolailles());
+				Logique.afficherVolailles();
 
 				break;
 			default:

@@ -23,7 +23,7 @@ public class Logique {
 			Paon vPaon = new Paon();
 			volailles.put(vPaon.getId(), vPaon);
 			counterPaons++;
-			System.out.println("Vous avez ajout� un paon.");
+			System.out.println("Vous avez ajouté un paon.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -48,7 +48,7 @@ public class Logique {
 			Cygne vCygne = new Cygne();
 			volailles.put(vCygne.getId(), vCygne);
 			counterCygnes++;
-			System.out.println("Vous avez ajout� un cygne.");
+			System.out.println("Vous avez ajouté un cygne.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -73,7 +73,7 @@ public class Logique {
 			Poulet vPoulet = new Poulet(pPoids);
 			volailles.put(vPoulet.getId(), vPoulet);
 			counterPoulets++;
-			System.out.println("Vous avez ajout� un poulet.");
+			System.out.println("Vous avez ajouté un poulet.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -98,7 +98,7 @@ public class Logique {
 			Canard vCanard = new Canard(pPoids);
 			volailles.put(vCanard.getId(), vCanard);
 			counterCanards++;
-			System.out.println("Vous avez ajout� un canard.");
+			System.out.println("Vous avez ajouté un canard.");
 		} else if (volailles.size() >= MAX_VOLLAILLES) {
 			System.out.println("Vous ne pouvez pas rajouter de volaille.");
 		} else {
@@ -120,12 +120,12 @@ public class Logique {
 
 	public static void ModifierPouletPrixKilo(int pPrixKilo) {
 		Poulet.setPrixAuKilo(pPrixKilo);
-		System.out.println("Le prix du poulet au kilo est de " + pPrixKilo + "�.");
+		System.out.println("Le prix du poulet au kilo est de " + pPrixKilo + "€.");
 	}
 
 	public static void ModifierCanardPrixKilo(int pPrixKilo) {
 		Canard.setPrixAuKilo(pPrixKilo);
-		System.out.println("Le prix du canard au kilo est de " + pPrixKilo + "�.");
+		System.out.println("Le prix du canard au kilo est de " + pPrixKilo + "€.");
 
 	}
 
@@ -161,7 +161,7 @@ public class Logique {
 		System.out.println("afffichage salaire du prix total de volailles vendables");
 
 		if (volailles.isEmpty()) {
-			System.out.println("il n'y a aucune volaille � vendre");
+			System.out.println("il n'y a aucune volaille à vendre");
 		} else {
 			double total = 0;
 			for (Entry<Integer, Volaille> volaille : volailles.entrySet()) {
@@ -180,7 +180,6 @@ public class Logique {
 			System.out.println("total du prix de vente des volailles : " + total);
 		}
 	}
-	
 
 	public static void afficherVolailles() {
 		System.out.println("il y a " + volailles.size() + " volailles :");
