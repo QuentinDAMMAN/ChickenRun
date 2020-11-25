@@ -12,7 +12,6 @@ public class Case {
 	}
 
 	public static void processAction(int input) {
-		System.out.println();
 
 		switch (input) {
 		case 0:
@@ -31,13 +30,18 @@ public class Case {
 				switch (input) {
 				case 1:
 //				ajouter un poulet
-
+					System.out.println("Veillez saisir un poids :");
+					input = Input.inputInt();
+					Logique.ajouterPoulet(input);
 					break;
 				case 2:
 //				ajouter un canard
-
+					System.out.println("Veillez saisir un poids :");
+					input = Input.inputInt();
+					Logique.ajouterCanard(input);
 					break;
 				default:
+					erreurChiffre();
 					break;
 				}
 				break;
@@ -48,17 +52,19 @@ public class Case {
 				switch (input) {
 				case 1:
 //				ajouter un paon
-
+					Logique.ajouterPaon();
 					break;
 				case 2:
 //				ajouter un cygne
-
+					Logique.ajouterCygne();
 					break;
 				default:
+					erreurChiffre();
 					break;
 				}
 				break;
 			default:
+				erreurChiffre();
 				break;
 			}
 			break;
@@ -75,9 +81,31 @@ public class Case {
 //			modifier prix du jour
 				break;
 			case 3:
-//				modifier poids d'une volaille
+//				modifier poids d'une volaille marchande
+				Interface.showSousMenuModifierVolailleMarchande();
+				input = Input.inputInt();
+				switch (input) {
+				case 1:
+//				modifier le poids d'un poulet	
+					System.out.println("Veillez saisir un id :");
+					input = Input.inputInt();
+//					test id ?
+					Poulet.ModifierPoidsVolaille(input);
+					break;
+				case 2:
+//					modifier le poids d'un canard	
+					System.out.println("Veillez saisir un id :");
+					input = Input.inputInt();
+//					test id ?
+					Canard.ModifierPoidsVolaille(input);
+					break;
+				default:
+					erreurChiffre();
+					break;
+				}
 				break;
 			default:
+				erreurChiffre();
 				break;
 			}
 			break;
@@ -91,6 +119,8 @@ public class Case {
 //			voir le nombre de volailles par type
 				Interface.showSousMenuAfficherVolaille();
 				switch (input) {
+				case 0:
+					break;
 				case 1:
 //					voir le nombre de poulet
 					break;
@@ -101,6 +131,7 @@ public class Case {
 //					voir le nombre de paon
 					break;
 				default:
+					erreurChiffre();
 					break;
 				}
 				break;
@@ -109,8 +140,11 @@ public class Case {
 				break;
 			case 3:
 //			voir toutes les volailles
+				System.out.println(Logique.getVolailles());
+
 				break;
 			default:
+				erreurChiffre();
 				break;
 			}
 			break;
@@ -121,12 +155,19 @@ public class Case {
 			input = Input.inputInt();
 			switch (input) {
 			case 1:
-//				vendre un canard
+//				vendre un poulet
+				System.out.println("Veillez saisir un id :");
+				input = Input.inputInt();
+				Logique.rendrePoulet(input);
 				break;
 			case 2:
-//				vendre un poulet
+//				vendre un canard
+				System.out.println("Veillez saisir un id :");
+				input = Input.inputInt();
+				Logique.rendreCanard(input);
 				break;
 			default:
+				erreurChiffre();
 				break;
 			}
 			break;
@@ -137,16 +178,25 @@ public class Case {
 			input = Input.inputInt();
 			switch (input) {
 			case 1:
-//			rendre un paon	
+//			rendre un paon
+				System.out.println("Veillez saisir un id :");
+				input = Input.inputInt();
+				Logique.rendrePaon(input);
 				break;
 			case 2:
-				break;
 //			rendre un signe
+				System.out.println("Veillez saisir un id :");
+				input = Input.inputInt();
+				Logique.rendreCygne(input);
+				break;
+
 			default:
+				erreurChiffre();
 				break;
 			}
 			break;
 		default:
+			erreurChiffre();
 			break;
 		}
 	}
@@ -154,6 +204,11 @@ public class Case {
 	private static void exitProgram() {
 		System.out.println("See you soon !");
 		setContinuing(false);
+
+	}
+
+	private static void erreurChiffre() {
+		System.out.println("numero non reconnu");
 
 	}
 

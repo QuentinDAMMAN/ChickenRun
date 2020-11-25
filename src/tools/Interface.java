@@ -6,71 +6,74 @@ public final class Interface {
 	}
 
 	public static void showMenuPrincipale() {
-		
-		System.out.println("saisir un numero d'action : ");
-		System.out.println("-1 pour ajouter");
-		System.out.println("-2 pour modifier");
-		System.out.println("-3 pour afficher");
-		System.out.println("-4 pour vendre");
-		System.out.println("-5 pour rendre");
+
+		System.out.println(
+				"saisir un numero d'action :\n-0 pour quitter\n-1 pour ajouter\n-2 pour modifier\n-3 pour afficher\n-4 pour vendre\n-5 pour rendre");
 	}
 
 	public static void showSousMenuAjouter() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 ajouter une volaille marchande");
-		System.out.println("-2 ajouter une volaille");
-		
+		sousMenu();
+//		retour();
+		System.out.println("-1 ajouter une volaille marchande\n-2 ajouter une volaille");
 	}
-	
+
 	public static void showSousMenuAjouterVolailleMarchande() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 ajouter un poulet");
-		System.out.println("-2 ajouter un canard");
+		sousMenu();
+//		retour();
+		System.out.println("-1 ajouter un poulet\n-2 ajouter un canard");
 	}
-	
+
 	public static void showSousMenuAjouterVolaille() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 ajouter un paon");
-		System.out.println("-2 ajouter un cygne");
+		sousMenu();
+//		retour();
+		System.out.println("-1 ajouter un paon\n-2 ajouter un cygne");
 	}
 
 	public static void showSousMenuModifier() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 modifier poids abattage");
-		System.out.println("-2 modifier prix du jour");
-		System.out.println("-3 modifier poids d'une volaille");
+		sousMenu();
+//		retour();
+		System.out.println(
+				"-1 modifier poids abattage\n-2 modifier prix du jour\n-3 modifier poids d'une volaille marchande");
 	}
-	
+
+	public static void showSousMenuModifierVolailleMarchande() {
+		sousMenu();
+//		retour();
+		System.out.println("-1 modifier poids d'un poulet\n-2 modifier le poids d'un canard");
+	}
+
 	public static void showSousMenuAfficher() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 voir le nombre de volailles par type");
-		System.out.println("-2 voir le total de prix des volailles abattables");
-		System.out.println("-3 voir toutes les volailles");
+		sousMenu();
+//		retour();
+		System.out.println(
+				"-1 voir le nombre de volailles par type\n-2 voir le total du prix des volailles abattables\n-3 voir toutes les volailles");
 	}
-	
+
 	public static void showSousMenuAfficherVolaille() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 voir le nombre de poulet");
-		System.out.println("-2 voir le nombre de canard");
-		System.out.println("-3 voir le nombre de paon");
+		sousMenu();
+//		retour();
+		System.out.println("-1 voir le nombre de poulet\n-2 voir le nombre de canard\n-3 voir le nombre de paon");
 	}
-	
+
 	public static void showSousMenuVendre() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 vendre un canard");
-		System.out.println("-2 vendre un poulet");
+		sousMenu();
+//		retour();
+		System.out.println("-1 vendre un poulet\n-2 vendre un canard");
 	}
-	
+
 	public static void showSousMenuRendre() {
-		System.out.println("saisir un numero de sous action : ");
-		System.out.println("-1 rendre un paon");
-		System.out.println("-2 vendre un signe");
+		sousMenu();
+//		retour();
+		System.out.println("-1 rendre un paon\n-2 vendre un signe");
 	}
-	
-	
-	
-	
-	
-	
+
+	private static void sousMenu() {
+		System.out.println("saisir un numero de sous action : ");
+
+	}
+
+//	private static void retour() {
+//		System.out.println("-0 pour revenir en arrière");
+//	}
 
 }
