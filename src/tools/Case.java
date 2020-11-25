@@ -95,9 +95,18 @@ public class Case {
 				}
 
 			case 2:
-//			modifier prix du jour
+//			modifier prix du jour poulet
+				input = Input.inputInt();
+				System.out.println("Veillez saisir un prix au kilo pour les poulets :");
+				Logique.ModifierPouletPrixKilo(input);
 				break;
 			case 3:
+//				modifier prix du jour canard
+					input = Input.inputInt();
+					System.out.println("Veillez saisir un prix au kilo pour les canards :");
+					Logique.ModifierCanardPrixKilo(input);
+					break;
+			case 4:
 //				modifier poids d'une volaille marchande
 				System.out.println("Veillez saisir un id :");
 				input = Input.inputInt();

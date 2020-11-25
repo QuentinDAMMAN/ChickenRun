@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 
 import data.Canard;
 import data.Cygne;
@@ -194,16 +193,16 @@ public class Logique {
 	public static void afficherVolailles() {
 		System.out.println("il y a " + volailles.size() + " volailles :");
 		for (Volaille volaille : volailles.values()) {
-			System.out.println(" - " + volaille.getId() + " " + volaille.getClass().getName());
+			System.out.println(" - " + volaille.getId() + " " + volaille.getClass().getSimpleName());
 		}
 	}
 
 	public static void afficherNbVolaillesParType() {
 		System.out.println("il y a " + volailles.size() + " volailles  au total:");
-		System.out.println("\t- " + counterPoulets + " poulet" + (counterPoulets == 1 ? "" : "s"));
-		System.out.println("\t- " + counterCanards + " canard" + (counterCanards == 1 ? "" : "s"));
-		System.out.println("\t- " + counterPaons + " paon" + (counterPaons == 1 ? "" : "s"));
-		System.out.println("\t- " + counterCygnes + " cygne" + (counterCygnes == 1 ? "" : "s"));
+		System.out.println("\t- " + counterPoulets + " poulet" + (counterPoulets <= 1 ? "" : "s"));
+		System.out.println("\t- " + counterCanards + " canard" + (counterCanards <= 1 ? "" : "s"));
+		System.out.println("\t- " + counterPaons + " paon" + (counterPaons <= 1 ? "" : "s"));
+		System.out.println("\t- " + counterCygnes + " cygne" + (counterCygnes <= 1 ? "" : "s"));
 	}
 
 	public static void afficherVolaillesParType() {
@@ -228,7 +227,8 @@ public class Logique {
 		Collections.sort(volAccueillables);
 		for (VolailleAccueillie volaille : volAccueillables) {
 			VolailleAccueillie value = volaille;
-			System.out.println("\t- " + value.getClass().getSimpleName() + " " + sdf.format(value.getDateAdmition()) + ".");
+			System.out.println(
+					"\t- " + value.getClass().getSimpleName() + " " + sdf.format(value.getDateAdmition()) + ".");
 		}
 		System.out.println("- Vendables");
 		Collections.sort(volVendables);
