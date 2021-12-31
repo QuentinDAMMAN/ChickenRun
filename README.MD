@@ -1,6 +1,7 @@
 # CDA - TD en groupe
-## Contextualisation
 ### Projet réalisé en début de formation CDA, il s'agit d'une appli réalisé en java 11 avec un terminal unique
+### Le but était de mettre pratique l'algorithmie ainsi que notre apprentissage dans le java
+## Contextualisation
 
 Un éleveur de volaille reçoit d’un fournisseur de jeunes canards et de jeunes poulets
 qu’il élève jusqu’à ce qu’ils aient la taille nécessaire à leur commercialisation, donc abattables.
