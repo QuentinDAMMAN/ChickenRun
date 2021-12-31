@@ -14,7 +14,7 @@
 ### Windows :
 
 ```batch
-launcher.bat
+.\launcher.bat
 ```
 
 ![image](https://i.goopics.net/82kidz.png)
