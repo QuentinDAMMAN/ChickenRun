@@ -17,7 +17,7 @@
 .\launcher.bat
 ```
 
-![image](https://i.goopics.net/82kidz.png)
+![image](https://i.goopics.net/apnwaw.png)
 
 ### Linux :
 
