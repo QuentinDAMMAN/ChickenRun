@@ -1,6 +1,33 @@
 # CDA - TD en groupe
-### Projet réalisé en début de formation CDA, il s'agit d'une appli réalisé en java 11 avec un terminal unique
+### Projet réalisé en début de formation CDA, il s'agit d'une appli réalisé en java 11 avec un terminal unique.
 ### Le but était de mettre pratique l'algorithmie ainsi que notre apprentissage dans le java
+
+</br>
+</br>
+
+# Installation de l'appli :
+- Vérfier que la jdk 11 est installer sur votre machine
+- Cloner le repos git en local sur votre machine 
+- Placer vous à la racine du repos git local
+- Vérfier que le fichier chickenRun.jar existe
+  
+### Windows :
+
+```batch
+launcher.bat
+```
+
+![image](https://i.goopics.net/82kidz.png)
+
+### Linux :
+
+```shell
+bash launcher.sh
+```
+
+![image](https://i.goopics.net/3nbgbd.png)
+
+
 ## Contextualisation
 
 Un éleveur de volaille reçoit d’un fournisseur de jeunes canards et de jeunes poulets
