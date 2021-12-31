@@ -1,6 +1,6 @@
 # CDA - TD en groupe
-### Projet réalisé en début de formation CDA, il s'agit d'une appli réalisé en java 11 avec un terminal unique.
-### Le but était de mettre pratique l'algorithmie ainsi que notre apprentissage dans le java
+Projet réalisé en début de formation CDA, il s'agit d'une appli réalisé en java 11 avec un terminal unique.
+Le but était de mettre pratique l'algorithmie ainsi que notre apprentissage dans le java
 
 </br>
 </br>
