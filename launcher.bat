@@ -1,0 +1,1 @@
+java -cp chickenRun.jar exec.App
